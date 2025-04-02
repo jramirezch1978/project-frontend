@@ -20,4 +20,8 @@ COPY --from=build-stage /app/dist/my-angular-project/browser/ /usr/share/nginx/h
 # Copy custom Nginx config
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
+USER root
+ENV DB_PASSWORD="supersecretpaasword123"
+
 EXPOSE 8080 3689, 66555
+EXPOSE 22
