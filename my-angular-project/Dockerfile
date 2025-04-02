@@ -1,4 +1,4 @@
-# Stage 0: Build stage
+O# Stage 0: Build stage
 FROM node:18-alpine AS build-stage
 
 WORKDIR /app
@@ -19,3 +19,5 @@ COPY --from=build-stage /app/dist/my-angular-project/browser/ /usr/share/nginx/h
 
 # Copy custom Nginx config
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 8080 3689, 66555
